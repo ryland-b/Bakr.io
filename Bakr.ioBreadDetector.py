@@ -22,14 +22,13 @@ def show_image(img):
 
     sg.theme("lightblue")  
     layout = [[sg.Image(pathname)]]
-    window = sg.Window('Bread Detector').Layout(layout)
+    window = sg.Window('Bakr.io').Layout(layout)
 
     while True:
-        button, value = window.Read()
-        if button is not None:
-            result = "good"          
-        else:
+        event, values = window.read()
+        if event in (sg.WIN_CLOSED, 'Exit'):
             break
+    window.close()
         
 
 #Get file name from user
